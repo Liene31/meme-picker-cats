@@ -16,10 +16,15 @@ function getEmotionsArray(catArray) {
 }
 
 function renderEmotions() {
-  const emotions = getEmotionsArray(catsData);
+  const emotionArray = getEmotionsArray(catsData);
+  const emotions = [];
 
+  for (const emotion of emotionArray) {
+    if (!emotions.includes(emotion)) {
+      emotions.push(emotion);
+    }
+  }
   for (const emotion of emotions) {
-    console.log(emotion);
     controlContainer.innerHTML += `
         <div class="radio-block">
           <label for="happy">${emotion}</label>
