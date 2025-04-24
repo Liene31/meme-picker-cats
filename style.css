@@ -3,39 +3,46 @@ body {
   padding: 0;
   font-family: "Quicksand", sans-serif;
   background-color: #f5e6da;
-  text-align: center;
 }
 
 /* Header */
 
 header {
+  background-color: #64231f;
+}
+
+.inner-header {
   display: flex;
   align-items: center;
-
-  background-color: #64231f;
-  font-family: "Fredoka", sans-serif;
-  font-weight: 700;
+  justify-content: center;
+  gap: 10px;
 }
 
 h1 {
   font-family: "Fredoka", sans-serif;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.75rem;
   color: #f5e6da;
 }
 
 span {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 img {
-  width: 130px;
+  width: 80px;
 }
 
 /* Main */
 
+.controls-container {
+  text-align: center;
+}
+
 h2 {
   margin: 0;
   padding: 20px 0;
+  text-align: center;
 }
