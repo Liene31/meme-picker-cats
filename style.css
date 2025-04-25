@@ -69,6 +69,14 @@ h2 {
   margin-bottom: 5px;
 }
 
+.radio-highlight {
+  background-color: #dbbebc;
+}
+
+.radio-block:hover {
+  background-color: #dbbebc;
+}
+
 .check-box {
   margin: 15px 0;
 }

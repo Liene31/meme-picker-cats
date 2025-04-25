@@ -4,6 +4,26 @@ import { catsData } from "/data.js";
 
 const controlContainer = document.getElementById("control-container");
 
+controlContainer.addEventListener("change", highlightRadio);
+
+function highlightRadio(event) {
+  const radioClassArray = [];
+
+  for (const radio of document.querySelectorAll(".radio-block")) {
+    radioClassArray.push(radio);
+  }
+
+  for (const radioBlock of radioClassArray) {
+    radioBlock.classList.remove("radio-highlight");
+  }
+
+  document
+    .getElementById(event.target.id)
+    .parentElement.classList.add("radio-highlight");
+
+  event.target.style.accentColor = "#64231f"; // Colors the radio button
+}
+
 function getEmotionsArray(catArray) {
   const emotionArray = [];
   for (const emotions of catArray) {
@@ -27,8 +47,8 @@ function renderEmotions() {
   for (const emotion of emotions) {
     controlContainer.innerHTML += `
         <div class="radio-block">
-          <label for="happy">${emotion}</label>
-          <input type="radio" id="happy" name="emotion" value="happy" />
+          <label for="${emotion}">${emotion}</label>
+          <input type="radio" id="${emotion}" name="emotion" value="${emotion}" />
         </div>`;
   }
 }
