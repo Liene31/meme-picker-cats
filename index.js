@@ -1,10 +1,24 @@
 import { catsData } from "/data.js";
 
-// console.log(catsData[1].emotionTags);
-
 const controlContainer = document.getElementById("control-container");
+const getImageBtn = document.getElementById("get-image-btn");
+const gifCheckbox = document.getElementById("gif-checkbox");
 
 controlContainer.addEventListener("change", highlightRadio);
+getImageBtn.addEventListener("click", getMatchingCatsArray);
+
+function getMatchingCatsArray() {
+  const isChecked = document.querySelector('input[type="radio"]:checked');
+  const isGif = gifCheckbox.checked;
+
+  if (isChecked) {
+    const selectedEmotion = document.querySelector(
+      'input[type="radio"]:checked'
+    ).value;
+  }
+
+  console.log(isGif);
+}
 
 function highlightRadio(event) {
   const radioClassArray = [];
@@ -46,11 +60,11 @@ function renderEmotions() {
   }
   for (const emotion of emotions) {
     controlContainer.innerHTML += `
-        <div class="radio-block">
+        <div class="radio-block" id="radio-block">
           <label for="${emotion}">${emotion}</label>
           <input type="radio" id="${emotion}" name="emotion" value="${emotion}" />
         </div>`;
   }
 }
 
-console.log(renderEmotions());
+renderEmotions();
