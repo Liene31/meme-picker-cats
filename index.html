@@ -15,7 +15,11 @@
   <body>
     <header>
       <div class="inner-header">
-        <img src="images/cat.png" alt="cute fluffy cat with eyes closed" />
+        <img
+          class="logo-img"
+          src="images/cat.png"
+          alt="cute fluffy cat with eyes closed"
+        />
         <h1><span>Paws & Picks</span>Purrsonalized Meme Picker</h1>
       </div>
     </header>
@@ -29,8 +33,15 @@
         <input type="checkbox" name="checkbox" id="gif-checkbox" />
       </div>
 
-      <button id="get-image-btn">Get Image</button>
+      <button class="get-image-btn" id="get-image-btn">Get Image</button>
     </main>
+    <div class="modal">
+      <button class="close-btn">X</button>
+
+      <div class="modal-inner">
+        <img class="rendered-img" src="images/angry.jpeg" alt="" />
+      </div>
+    </div>
     <script src="index.js" type="module"></script>
   </body>
 </html>
