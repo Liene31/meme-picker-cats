@@ -74,7 +74,7 @@ h2 {
 }
 
 .check-box {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .get-image-btn {
@@ -94,7 +94,7 @@ h2 {
 /* Modal */
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
