@@ -3,12 +3,28 @@ import { catsData } from "/data.js";
 const controlContainer = document.getElementById("control-container");
 const getImageBtn = document.getElementById("get-image-btn");
 const gifCheckbox = document.getElementById("gif-checkbox");
+const closeBtn = document.getElementById("close-btn");
+const modal = document.getElementById("modal");
+const modalInner = document.getElementById("modal-inner");
 
 controlContainer.addEventListener("change", highlightRadio);
 getImageBtn.addEventListener("click", renderImage);
+closeBtn.addEventListener("click", closeModal);
+
+function closeModal() {
+  modal.style.display = "none";
+}
 
 function renderImage() {
-  getSingleMatchingCat();
+  const singleCat = getSingleMatchingCat();
+
+  modal.style.display = "block";
+
+  modalInner.innerHTML = `
+    <img class="rendered-img"
+    src="images/${singleCat.image}"
+    alt="${singleCat.alt}" />
+  `;
 }
 
 function getMatchingCatsArray() {
@@ -33,7 +49,6 @@ function getMatchingCatsArray() {
 function getSingleMatchingCat() {
   const matchingCats = getMatchingCatsArray();
   const randomNum = Math.floor(Math.random() * matchingCats.length);
-  console.log(randomNum);
 
   if (matchingCats.length === 1) {
     return matchingCats[0];

@@ -94,6 +94,8 @@ h2 {
 /* Modal */
 
 .modal {
+  display: block;
+
   position: fixed;
   top: 0;
   right: 0;
@@ -121,8 +123,10 @@ h2 {
 
 .rendered-img {
   display: block;
-  width: 330px;
-  margin: 50px auto;
+  align-items: center;
+  max-width: 340px;
+  max-height: 420px;
+  margin: 10px auto;
   border-radius: 7px;
   border: 1px solid black;
 }
